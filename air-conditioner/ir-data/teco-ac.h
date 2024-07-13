@@ -1,3 +1,6 @@
+#ifndef _TECO_AC_H_
+#define _TECO_AC_H_
+
 #include <array>
 #include <IRsend.h>
 
@@ -40,3 +43,5 @@ private:
   IRsend* ir_;
   std::array<uint8_t, 9> data_;
 };
+
+#endif  // _TECO_AC_H_
