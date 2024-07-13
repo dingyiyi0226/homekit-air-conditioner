@@ -1,0 +1,280 @@
+// 26
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3230, 366]
+Potential Space Candidates:
+[1538, 1220, 378]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3230
+kHdrSpace  = 1538
+kBitMark   = 357
+kOneSpace  = 1195
+kZeroSpace = 353
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011010001111110010000010000000
+  Bits: 72
+  Hex:  0x30FF3F3F1F1A3F2080 (MSB first)
+        0x0104FC58F8FCFCFF0C (LSB first)
+  Dec:  903836204344079753344 (MSB first)
+        18806003970411921164 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011010001111110010000010000000 (MSB first)
+        0b000000010000010011111100010110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3266, 398]
+Potential Space Candidates:
+[1524, 1214, 352]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3266
+kHdrSpace  = 1524
+kBitMark   = 360
+kOneSpace  = 1201
+kZeroSpace = 340
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011010001111110010000010000000
+  Bits: 72
+  Hex:  0x30FF3F3F1F1A3F2080 (MSB first)
+        0x0104FC58F8FCFCFF0C (LSB first)
+  Dec:  903836204344079753344 (MSB first)
+        18806003970411921164 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011010001111110010000010000000 (MSB first)
+        0b000000010000010011111100010110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3234, 398]
+Potential Space Candidates:
+[1556, 1216, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3234
+kHdrSpace  = 1556
+kBitMark   = 372
+kOneSpace  = 1194
+kZeroSpace = 323
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011010001111110010000010000000
+  Bits: 72
+  Hex:  0x30FF3F3F1F1A3F2080 (MSB first)
+        0x0104FC58F8FCFCFF0C (LSB first)
+  Dec:  903836204344079753344 (MSB first)
+        18806003970411921164 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011010001111110010000010000000 (MSB first)
+        0b000000010000010011111100010110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+
+// 27
+
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3234, 398]
+Potential Space Candidates:
+[1560, 1218, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3234
+kHdrSpace  = 1560
+kBitMark   = 371
+kOneSpace  = 1190
+kZeroSpace = 327
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011011001111110010000010000001
+  Bits: 72
+  Hex:  0x30FF3F3F1F1B3F2081 (MSB first)
+        0x8104FCD8F8FCFCFF0C (LSB first)
+  Dec:  903836204344096530561 (MSB first)
+        2379989386142722883340 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011011001111110010000010000001 (MSB first)
+        0b100000010000010011111100110110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3234, 398]
+Potential Space Candidates:
+[1560, 1192, 322]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3234
+kHdrSpace  = 1560
+kBitMark   = 381
+kOneSpace  = 1183
+kZeroSpace = 314
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011011001111110010000010000001
+  Bits: 72
+  Hex:  0x30FF3F3F1F1B3F2081 (MSB first)
+        0x8104FCD8F8FCFCFF0C (LSB first)
+  Dec:  903836204344096530561 (MSB first)
+        2379989386142722883340 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011011001111110010000010000001 (MSB first)
+        0b100000010000010011111100110110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+
+// 28
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3266, 398]
+Potential Space Candidates:
+[1524, 1214, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3266
+kHdrSpace  = 1524
+kBitMark   = 371
+kOneSpace  = 1190
+kZeroSpace = 328
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011100001111110010000010000110
+  Bits: 72
+  Hex:  0x30FF3F3F1F1C3F2086 (MSB first)
+        0x6104FC38F8FCFCFF0C (LSB first)
+  Dec:  903836204344113307782 (MSB first)
+        1789693399862156787468 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011100001111110010000010000110 (MSB first)
+        0b011000010000010011111100001110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3238, 374]
+Potential Space Candidates:
+[1556, 1218, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3238
+kHdrSpace  = 1556
+kBitMark   = 367
+kOneSpace  = 1192
+kZeroSpace = 334
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011100001111110010000010000110
+  Bits: 72
+  Hex:  0x30FF3F3F1F1C3F2086 (MSB first)
+        0x6104FC38F8FCFCFF0C (LSB first)
+  Dec:  903836204344113307782 (MSB first)
+        1789693399862156787468 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011100001111110010000010000110 (MSB first)
+        0b011000010000010011111100001110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+
+// 25
+
+
+Potential Mark Candidates:
+[3236, 374]
+Potential Space Candidates:
+[1560, 1218, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3236
+kHdrSpace  = 1560
+kBitMark   = 367
+kOneSpace  = 1192
+kZeroSpace = 334
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011001001111110010000010000011
+  Bits: 72
+  Hex:  0x30FF3F3F1F193F2083 (MSB first)
+        0xC104FC98F8FCFCFF0C (LSB first)
+  Dec:  903836204344062976131 (MSB first)
+        3560580936491390009100 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011001001111110010000010000011 (MSB first)
+        0b110000010000010011111100100110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+Found 147 timing entries.
+Potential Mark Candidates:
+[3236, 372]
+Potential Space Candidates:
+[1560, 1218, 348]
+
+Guessing encoding type:
+Looks like it uses space encoding. Yay!
+
+Guessing key value:
+kHdrMark   = 3236
+kHdrSpace  = 1560
+kBitMark   = 367
+kOneSpace  = 1192
+kZeroSpace = 334
+
+Decoding protocol based on analysis so far:
+
+kHdrMark+kHdrSpace+001100001111111100111111001111110001111100011001001111110010000010000011
+  Bits: 72
+  Hex:  0x30FF3F3F1F193F2083 (MSB first)
+        0xC104FC98F8FCFCFF0C (LSB first)
+  Dec:  903836204344062976131 (MSB first)
+        3560580936491390009100 (LSB first)
+  Bin:  0b001100001111111100111111001111110001111100011001001111110010000010000011 (MSB first)
+        0b110000010000010011111100100110001111100011111100111111001111111100001100 (LSB first)
+
+Total Nr. of suspected bits: 72
+
+
+
+
+
+
+
+
