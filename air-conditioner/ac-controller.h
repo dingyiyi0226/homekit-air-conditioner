@@ -1,3 +1,4 @@
+#include <DHT_U.h>
 #include <HomeSpan.h>
 
 #include "ac-fan.h"
@@ -6,8 +7,8 @@
 
 
 struct ACController {
-  ACController() {
-    new ACThermostat();
+  ACController(DHT_Unified *dht) {
+    new ACThermostat(dht);
     new ACFan();
     new ACSwing();
   }
