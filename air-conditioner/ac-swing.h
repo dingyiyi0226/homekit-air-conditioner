@@ -2,11 +2,6 @@
 
 
 struct ACSwing : Service::Fan {
-  SpanCharacteristic *active;
-  SpanCharacteristic *currentState;
-  SpanCharacteristic *targetState;
-  SpanCharacteristic *swingType;
-
   ACSwing() {
     new Characteristic::ConfiguredName("Swing");
     active = new Characteristic::Active(Characteristic::Active::INACTIVE);
@@ -14,7 +9,7 @@ struct ACSwing : Service::Fan {
     swingType->setRange(0, 5, 1);
   }
 
-  bool update() {
+  bool update() override {
     if (active->updated()) {
       LOG1("Swing update active [%d]\n", active->getNewVal<uint8_t>());
     }
@@ -25,5 +20,11 @@ struct ACSwing : Service::Fan {
     return true;
   }
 
-  void loop() {}
+  void loop() override {}
+
+
+  SpanCharacteristic *active;
+  SpanCharacteristic *currentState;
+  SpanCharacteristic *targetState;
+  SpanCharacteristic *swingType;
 };

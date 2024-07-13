@@ -2,11 +2,6 @@
 
 
 struct ACFan : Service::Fan {
-  SpanCharacteristic *active;
-  SpanCharacteristic *currentState;
-  SpanCharacteristic *targetState;
-  SpanCharacteristic *fanType;
-
   ACFan() {
     new Characteristic::ConfiguredName("Fan");
     active = new Characteristic::Active(Characteristic::Active::INACTIVE);
@@ -14,7 +9,7 @@ struct ACFan : Service::Fan {
     fanType->setRange(0, 3, 1);
   }
 
-  bool update() {
+  bool update() override {
     if (active->updated()) {
       LOG1("Fan update active [%d]\n", active->getNewVal<uint8_t>());
     }
@@ -25,5 +20,10 @@ struct ACFan : Service::Fan {
     return true;
   }
 
-  void loop() {}
+  void loop() override {}
+
+  SpanCharacteristic *active;
+  SpanCharacteristic *currentState;
+  SpanCharacteristic *targetState;
+  SpanCharacteristic *fanType;
 };
