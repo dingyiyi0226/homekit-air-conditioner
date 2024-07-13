@@ -1,0 +1,44 @@
+# TECO
+
+
+## Experiment Data
+
+Currently hardcoded, the data format and checksum formula should be analyzed later.
+
+### Power
+fan: auto, swing: 1
+
+- 25:     0x30FF3F3F1F193F2083
+- 26:     0x30FF3F3F1F1A3F2080
+- 27:     0x30FF3F3F1F1B3F2081
+- 28:     0x30FF3F3F1F1C3F2086
+
+### Temp
+fan: auto, swing: 1
+
+- 26->25: 0x30BF3F3F1F193F2087
+- 25->26: 0x30BF3F3F1F1A3F2084
+- 28->27: 0x30BF3F3F1F1B3F2085
+- 27->28: 0x30BF3F3F1F1C3F2082
+
+- 26->27: 0x30BF3F3F1F1B3F2085
+- 27->26: 0x30BF3F3F1F1A3F2084
+
+### Fan
+temp: 26, swing: 1
+
+- 3->0:   0x30BF3F3F1F1A3F2084
+- 0->1:   0x30BF3F3F1F3A3F2086
+- 1->2:   0x30BF3F3F1F5A3F2080
+- 2->3:   0x30BF3F3F1F7A3F2082
+
+
+### Swing
+temp: 26, fan: auto
+
+- 5->0:   0x30BF3F3F1F1A3FE088
+- 0->1:   0x30BF3F3F1F1A3F2084
+- 1->2:   0x30BF3F3F1F1A3F4082
+- 2->3:   0x30BF3F3F1F1A3F6080
+- 3->4:   0x30BF3F3F1F1A3F808E
+- 4->5:   0x30BF3F3F1F1A3FA08C
