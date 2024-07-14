@@ -12,7 +12,7 @@ struct ACFan : Service::Fan {
   }
 
   bool update() override {
-    if (fanType->updated()) {
+    if (fanType->updated() && (fanType->getVal<int>() != fanType->getNewVal<int>())) {
       LOG1("Fan update fanType from [%d] to [%d]\n",  fanType->getVal<int>(), fanType->getNewVal<int>());
       tecoAC->SetFan(TecoAC::FanType(fanType->getNewVal<int>()));
     }

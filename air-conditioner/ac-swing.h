@@ -11,7 +11,7 @@ struct ACSwing : Service::Fan {
   }
 
   bool update() override {
-    if (swingType->updated()) {
+    if (swingType->updated() && (swingType->getVal<int>() != swingType->getNewVal<int>())) {
       LOG1("Swing update swingType from [%d] to [%d]\n",  swingType->getVal<int>(), swingType->getNewVal<int>());
       tecoAC->SetSwing(TecoAC::SwingType(swingType->getNewVal<int>()));
     }

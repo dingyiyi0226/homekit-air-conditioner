@@ -28,11 +28,11 @@ ACThermostat::ACThermostat(DHT_Unified *dht, TecoAC *tecoAC) : dht(dht), tecoAC(
 }
 
 bool ACThermostat::update() {
-  if (targetState->updated()) {
+  if (targetState->updated() && (targetState->getVal<uint8_t>() != targetState->getNewVal<uint8_t>())) {
     LOG1("Thermo update targetState from [%d] to [%d]\n", targetState->getVal<uint8_t>(), targetState->getNewVal<uint8_t>());
     tecoAC->Power();
   }
-  if (targetTemperature->updated()) {
+  if (targetTemperature->updated() && (targetTemperature->getVal<int>() != targetTemperature->getNewVal<int>())) {
     LOG1("Thermo update targetTemperature from [%d] to [%d]\n", targetTemperature->getVal<int>(), targetTemperature->getNewVal<int>());
     tecoAC->SetTemperature(targetTemperature->getNewVal<int>());
   }
