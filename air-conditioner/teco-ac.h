@@ -7,6 +7,8 @@
 
 class TecoAC {
 public:
+  using TecoMsg = std::array<uint8_t, 9>;  // 18 nibbles, last nibble is the checksum
+
   enum FanType {
     FAN_AUTO,
     FAN_LOW,
@@ -23,12 +25,13 @@ public:
     SWING_LOWEST,
   };
 
-  TecoAC(IRsend* ir): ir_(ir), data_({}) {}
+  TecoAC(IRsend* ir);
 
   void Send();
+  void Send(TecoMsg& message);
 
-  void SetPower(int degree);
-  void SetTemperature(int degree);
+  void Power();
+  void SetTemperature(int temperature);
   void SetFan(FanType type);
   void SetSwing(SwingType type);
 
@@ -40,8 +43,12 @@ public:
   const uint16_t kFreq = 38000;
 
 private:
+  void UpdateMessage(int nibble, uint8_t value);
+  TecoMsg GetNewMessage(int nibble, uint8_t value) const;
+
   IRsend* ir_;
-  std::array<uint8_t, 9> data_;
+  TecoMsg default_message_;
+  TecoMsg current_message_;
 };
 
 #endif  // _TECO_AC_H_

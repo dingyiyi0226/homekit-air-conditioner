@@ -14,7 +14,6 @@ struct ACSwing : Service::Fan {
     if (swingType->updated()) {
       LOG1("Swing update swingType from [%d] to [%d]\n",  swingType->getVal<int>(), swingType->getNewVal<int>());
       tecoAC->SetSwing(TecoAC::SwingType(swingType->getNewVal<int>()));
-      tecoAC->Send();
     }
 
     return true;

@@ -30,13 +30,11 @@ ACThermostat::ACThermostat(DHT_Unified *dht, TecoAC *tecoAC) : dht(dht), tecoAC(
 bool ACThermostat::update() {
   if (targetState->updated()) {
     LOG1("Thermo update targetState from [%d] to [%d]\n", targetState->getVal<uint8_t>(), targetState->getNewVal<uint8_t>());
-    tecoAC->SetPower(26);
-    tecoAC->Send();
+    tecoAC->Power();
   }
   if (targetTemperature->updated()) {
     LOG1("Thermo update targetTemperature from [%d] to [%d]\n", targetTemperature->getVal<int>(), targetTemperature->getNewVal<int>());
     tecoAC->SetTemperature(targetTemperature->getNewVal<int>());
-    tecoAC->Send();
   }
 
   return true;
