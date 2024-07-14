@@ -4,8 +4,10 @@
 #include <DHT_U.h>
 #include <HomeSpan.h>
 
+#include "teco-ac.h"
 
-ACThermostat::ACThermostat(DHT_Unified *dht) : dht(dht) {
+
+ACThermostat::ACThermostat(DHT_Unified *dht, TecoAC *tecoAC) : dht(dht), tecoAC(tecoAC) {
   new Characteristic::ConfiguredName("Thermostat");
 
   targetState = new Characteristic::TargetHeatingCoolingState();
@@ -28,9 +30,13 @@ ACThermostat::ACThermostat(DHT_Unified *dht) : dht(dht) {
 bool ACThermostat::update() {
   if (targetState->updated()) {
     LOG1("Thermo update targetState from [%d] to [%d]\n", targetState->getVal<uint8_t>(), targetState->getNewVal<uint8_t>());
+    tecoAC->SetPower(26);
+    tecoAC->Send();
   }
   if (targetTemperature->updated()) {
     LOG1("Thermo update targetTemperature from [%d] to [%d]\n", targetTemperature->getVal<int>(), targetTemperature->getNewVal<int>());
+    tecoAC->SetTemperature(targetTemperature->getNewVal<int>());
+    tecoAC->Send();
   }
 
   return true;

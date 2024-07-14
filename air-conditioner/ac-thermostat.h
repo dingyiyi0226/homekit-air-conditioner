@@ -2,9 +2,11 @@
 #include <DHT_U.h>
 #include <HomeSpan.h>
 
+#include "teco-ac.h"
+
 
 struct ACThermostat : Service::Thermostat {
-  ACThermostat(DHT_Unified *dht);
+  ACThermostat(DHT_Unified *dht, TecoAC *tecoAC);
 
   bool update() override;
   void loop() override;
@@ -21,6 +23,7 @@ struct ACThermostat : Service::Thermostat {
   SpanCharacteristic *currentHumidity;
 
   DHT_Unified *dht;
+  TecoAC *tecoAC;
 
   // temperature/humidity sensor constants
   int check_interval_ms;
