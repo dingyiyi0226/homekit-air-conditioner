@@ -1,7 +1,11 @@
 #include "teco-ac.h"
 
 #include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <string>
 
+#include <HomeSpan.h>
 #include <IRremoteESP8266.h>
 #include <IRsend.h>
 
@@ -21,6 +25,17 @@ void UpdateChecksum(TecoAC::TecoMsg &message) {
     checksum ^= (byte & 0x0F);
   }
   message.back() += checksum;
+}
+
+std::string TecoMsgToHexString(const TecoAC::TecoMsg& message) {
+  std::ostringstream oss;
+  oss << "0x";
+  
+  for (const auto &byte: message) {
+    oss << std::hex << std::uppercase << std::setw(2) << std::setfill('0') << static_cast<int>(byte);
+  }
+  
+  return oss.str();
 }
 
 }  // namespace
@@ -45,6 +60,7 @@ void TecoAC::Send(TecoMsg &message) {
     message.data(), message.size(),
     kFreq, true, kNoRepeat, kDutyDefault
   );
+  LOG1("Send msg [%s]\n", TecoMsgToHexString(message).c_str());
 }
 
 /**
