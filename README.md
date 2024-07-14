@@ -28,4 +28,4 @@ HomeKit A/C remote control built with NodeMCU-32S (ESP 32) and [HomeSpan](https:
 
 ## Layout
 
-![Layout](https://raw.githubusercontent.com/dingyiyi0226/homekit-air-conditioner/master/src/IMG_5974.jpg)
+<img src="img/IMG_5974.jpg" alt="layout" style="width:30%;" />
