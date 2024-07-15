@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <sstream>
 #include <string>
+#include <mutex>
 
 #include <HomeSpan.h>
 #include <IRremoteESP8266.h>
@@ -153,7 +154,7 @@ void TecoAC::SetSwing(SwingType type) {
 }
 
 void TecoAC::UpdateMessage(int nibble, uint8_t value) {
-  // TODO: add mutex
+  std::lock_guard<std::mutex> lock(message_lock_);
 
   if (nibble > 17 || nibble < 0 || value > 0xF) {
     return;

@@ -2,6 +2,8 @@
 #define _TECO_AC_H_
 
 #include <array>
+#include <mutex>
+
 #include <IRsend.h>
 
 
@@ -49,6 +51,7 @@ private:
   IRsend* ir_;
   TecoMsg default_message_;
   TecoMsg current_message_;
+  std::mutex message_lock_;
 };
 
 #endif  // _TECO_AC_H_
