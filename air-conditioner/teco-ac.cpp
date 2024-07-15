@@ -1,6 +1,5 @@
 #include "teco-ac.h"
 
-#include <algorithm>
 #include <iomanip>
 #include <sstream>
 #include <string>
@@ -81,8 +80,8 @@ void TecoAC::Power() {
  *
  */
 void TecoAC::SetTemperature(int temperature) {
-  temperature = std::max(temperature, 16);
-  temperature = std::min(temperature, 31);
+  temperature = max(temperature, 16);
+  temperature = min(temperature, 31);
 
   UpdateMessage(11, static_cast<uint8_t>(temperature - 16));
   Send();
