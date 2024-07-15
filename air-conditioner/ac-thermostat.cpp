@@ -18,7 +18,7 @@ ACThermostat::ACThermostat(DHT_Unified *dht, TecoAC *tecoAC) : dht(dht), tecoAC(
   tempUnits = new Characteristic::TemperatureDisplayUnits(Characteristic::TemperatureDisplayUnits::CELSIUS);
 
   targetState->setValidValues(2, Characteristic::TargetHeatingCoolingState::OFF, Characteristic::TargetHeatingCoolingState::COOL);
-  targetTemperature->setRange(20, 28, 1);
+  targetTemperature->setRange(16, 31, 1);
 
 
   check_interval_ms = 60 * 1000;          // 60 sec
