@@ -1,3 +1,5 @@
+#include <list>
+
 #include <Adafruit_Sensor.h>
 #include <DHT_U.h>
 #include <HomeSpan.h>
@@ -13,6 +15,7 @@ struct ACThermostat : Service::Thermostat {
 
   void checkTemperature();
   void checkHumidity();
+  void checkResetPower();
 
 
   SpanCharacteristic *currentState;
@@ -30,4 +33,6 @@ struct ACThermostat : Service::Thermostat {
   int force_update_interval_ms;
   float temp_diff_threshold;
   float humid_diff_threshold;
+
+  std::list<int> temp_history;
 };

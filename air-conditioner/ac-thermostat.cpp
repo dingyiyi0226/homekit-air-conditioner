@@ -35,10 +35,40 @@ bool ACThermostat::update() {
   if (targetTemperature->updated() && (targetTemperature->getVal<int>() != targetTemperature->getNewVal<int>())) {
     LOG1("Thermo update targetTemperature from [%d] to [%d]\n", targetTemperature->getVal<int>(), targetTemperature->getNewVal<int>());
     tecoAC->SetTemperature(targetTemperature->getNewVal<int>());
+
+    temp_history.push_back(targetTemperature->getNewVal<int>());
+    if (temp_history.size() > 3) {
+      temp_history.pop_front();
+    }
+    checkResetPower();
   }
 
   return true;
 }
+
+/**
+ * Reset the power status without sending the signal.
+ * Magic temperature sequence: 28, 24, 28
+ *
+ */
+void ACThermostat::checkResetPower() {
+  if (temp_history.size() < 3) {
+    return;
+  }
+
+  int i = 0;
+  for (const auto &temp: temp_history) {
+    if ((i == 0 && temp != 28) || (i == 1 && temp != 24) || (i == 2 && temp != 28)) {
+      return;
+    }
+    ++i;
+  }
+
+  LOG1("Reset power status\n");
+  temp_history.clear();
+  targetState->setVal(Characteristic::TargetHeatingCoolingState::OFF);
+}
+
 
 void ACThermostat::loop() {
   checkTemperature();
