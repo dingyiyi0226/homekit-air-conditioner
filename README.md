@@ -12,6 +12,10 @@ The Homekit accessory contains multiple services:
 - [Thermostat](https://github.com/HomeSpan/HomeSpan/blob/master/docs/ServiceList.md#thermostat-4a): the main service of the remote control
 - [Fan](https://github.com/HomeSpan/HomeSpan/blob/master/docs/ServiceList.md#fan-b7): utilize the rotation speed to set up different modes. Both swing and fan mode are the Fan service
 
+## Usage
+
+- Set up the Wi-Fi credentials and pair the device by [Homespan tutorial](https://github.com/HomeSpan/HomeSpan/blob/master/docs/UserGuide.md#setting-homespans-wifi-credentials-and-setup-code)
+- Modify the IR module based on your A/C model
 
 ## Source code
 
@@ -38,4 +42,4 @@ The Homekit accessory contains multiple services:
 
 ## Demo
 
-<img src="img/demo.png" alt="layout" style="width:90%;" />
+<img src="img/demo.png" alt="layout" style="width:100%;" />
