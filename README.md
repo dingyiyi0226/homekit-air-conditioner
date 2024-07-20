@@ -36,6 +36,6 @@ The Homekit accessory contains multiple services:
 - [IRremoteESP8266](https://github.com/crankyoldgit/IRremoteESP8266)
 
 
-## Layout
+## Demo
 
-<img src="img/IMG_5974.jpg" alt="layout" style="width:30%;" />
+<img src="img/demo.png" alt="layout" style="width:90%;" />
