@@ -1,3 +1,6 @@
+#ifndef _AC_THERMOSTAT_H_
+#define _AC_THERMOSTAT_H_
+
 #include <list>
 
 #include <Adafruit_Sensor.h>
@@ -36,3 +39,5 @@ struct ACThermostat : Service::Thermostat {
 
   std::list<int> temp_history;
 };
+
+#endif  // _AC_THERMOSTAT_H_

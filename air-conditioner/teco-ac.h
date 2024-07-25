@@ -27,6 +27,13 @@ public:
     SWING_LOWEST,
   };
 
+  static constexpr uint16_t kHdrMark = 3300;
+  static constexpr uint32_t kHdrSpace = 1600;
+  static constexpr uint16_t kBitMark = 400;
+  static constexpr uint32_t kOneSpace = 1200;
+  static constexpr uint32_t kZeroSpace = 400;
+  static constexpr uint16_t kFreq = 38000;
+
   TecoAC(IRsend* ir);
 
   void Send();
@@ -36,13 +43,6 @@ public:
   void SetTemperature(int temperature);
   void SetFan(FanType type);
   void SetSwing(SwingType type);
-
-  const uint16_t kHdrMark = 3300;
-  const uint32_t kHdrSpace = 1600;
-  const uint16_t kBitMark = 400;
-  const uint32_t kOneSpace = 1200;
-  const uint32_t kZeroSpace = 400;
-  const uint16_t kFreq = 38000;
 
 private:
   void UpdateMessage(int nibble, uint8_t value);

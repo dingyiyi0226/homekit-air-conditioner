@@ -1,3 +1,6 @@
+#ifndef _AC_FAN_H_
+#define _AC_FAN_H_
+
 #include <HomeSpan.h>
 
 #include "teco-ac.h"
@@ -22,6 +25,7 @@ struct ACFan : Service::Fan {
 
   void loop() override {}
 
+
   SpanCharacteristic *active;
   SpanCharacteristic *currentState;
   SpanCharacteristic *targetState;
@@ -29,3 +33,5 @@ struct ACFan : Service::Fan {
 
   TecoAC *tecoAC;
 };
+
+#endif  // _AC_FAN_H_

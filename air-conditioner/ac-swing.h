@@ -1,6 +1,10 @@
+#ifndef _AC_SWING_H_
+#define _AC_SWING_H_
+
 #include <HomeSpan.h>
 
 #include "teco-ac.h"
+
 
 struct ACSwing : Service::Fan {
   ACSwing(TecoAC *tecoAC) : tecoAC(tecoAC) {
@@ -29,3 +33,5 @@ struct ACSwing : Service::Fan {
 
   TecoAC *tecoAC;
 };
+
+#endif  // _AC_SWING_H_
