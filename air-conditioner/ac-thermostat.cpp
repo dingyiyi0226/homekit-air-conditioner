@@ -73,6 +73,7 @@ void ACThermostat::checkResetPower() {
 void ACThermostat::loop() {
   checkTemperature();
   checkHumidity();
+  regulatePowerState();
 }
 
 /**
@@ -131,4 +132,22 @@ void ACThermostat::checkHumidity() {
 
   currentHumidity->setVal(event.relative_humidity);
   LOG1("Humidity Update: %f\n", event.relative_humidity);
+}
+
+/**
+ * Regulate power state to cooling state.
+ * Although we cannot change to other states via the Home app UI,
+ * it is possible to set the state via Siri.
+ *
+ * Note: we cannot update the state in the update() function, so check it in the loop.
+ *
+ */
+void ACThermostat::regulatePowerState() {
+  if (
+    (targetState->getVal<uint8_t>() == Characteristic::TargetHeatingCoolingState::HEAT) ||
+    (targetState->getVal<uint8_t>() == Characteristic::TargetHeatingCoolingState::AUTO)
+  ) {
+    LOG1("Regulate power state from [%d] to [%d]\n", targetState->getVal<uint8_t>(), Characteristic::TargetHeatingCoolingState::COOL);
+    targetState->setVal(Characteristic::TargetHeatingCoolingState::COOL);
+  }
 }

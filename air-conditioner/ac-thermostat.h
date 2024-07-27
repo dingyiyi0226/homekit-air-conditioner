@@ -19,6 +19,7 @@ struct ACThermostat : Service::Thermostat {
   void checkTemperature();
   void checkHumidity();
   void checkResetPower();
+  void regulatePowerState();
 
 
   SpanCharacteristic *currentState;
