@@ -1,4 +1,5 @@
 #include <ctime>
+#include <esp_sleep.h>
 
 #include <DHT.h>
 #include <DHT_U.h>
@@ -53,7 +54,7 @@ void loop() {
     return;
   }
 
-  delay(30 * 60 * 1000);  // 30 min
+  lightSleep();
 }
 
 bool isPeakHour(const std::tm &localtm) {
@@ -70,4 +71,25 @@ bool isPeakHour(const std::tm &localtm) {
   }
 
   return true;
+}
+
+/**
+ * During light sleep, the WiFi connection is lost, and the Home app UI shows Not Responding.
+ *
+ */
+void lightSleep() {
+  int sleep_duration = 30 * 60 * 1000000; // 30 min
+
+  if (esp_sleep_enable_timer_wakeup(sleep_duration) != ESP_OK) {
+    Serial.println("Failed to enable timer wakeup");
+    return;
+  }
+
+  Serial.println("Light sleep start");
+  Serial.flush();
+
+  if (esp_light_sleep_start() != ESP_OK) {
+    Serial.println("Failed to light sleep");
+    return;
+  }
 }
