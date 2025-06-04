@@ -37,7 +37,7 @@ struct HumiditySensor : Service::HumiditySensor {
     }
 
     if (
-      (abs(event.temperature - humidity_kit->getVal<float>()) < humid_diff_threshold) &&
+      (abs(event.relative_humidity - humidity_kit->getVal<float>()) < humid_diff_threshold) &&
       (humidity_kit->timeVal() < force_update_interval_ms)
     ) {
       return;

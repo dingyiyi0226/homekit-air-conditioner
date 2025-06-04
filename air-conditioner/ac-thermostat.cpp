@@ -124,7 +124,7 @@ void ACThermostat::checkHumidity() {
   }
 
   if (
-    (abs(event.temperature - currentHumidity->getVal<float>()) < humid_diff_threshold) &&
+    (abs(event.relative_humidity - currentHumidity->getVal<float>()) < humid_diff_threshold) &&
     (currentHumidity->timeVal() < force_update_interval_ms)
   ) {
     return;
